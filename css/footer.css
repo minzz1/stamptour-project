@@ -1,0 +1,8 @@
+footer {
+    width: 100%;
+    height: 80px;
+    background-color: #EFE3EB ;
+}
+footer div{
+    display: flex;
+}

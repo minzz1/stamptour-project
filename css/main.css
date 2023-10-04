@@ -1,0 +1,73 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 430px;
+    color: #353535;
+    font-family: Noto Sans KR;
+}
+
+.mainTitle{
+    margin: 5%;
+    font-size: 1.4em;
+    font-weight: 800
+}
+
+/* <!-- 버튼 2개 --> */
+.button-wrapper {
+    display: flex;
+    padding: 5%;
+    border: 1px solid saddlebrown;
+}
+.button-wrapper button {
+    width: 40%;
+    height: 70px;
+    border: none;
+}
+.button-wrapper .tutorial {
+    border-radius: 3px;
+    background: #EFE3EB;
+}
+.button-wrapper .myStamp{
+    border-radius: 3px;
+    background: #D3D3D3;
+}
+
+
+/* 인기 장소 */
+
+.place-title{
+    margin: 7%;
+    font-size: 1.3em;
+    font-weight: 900;
+}
+.place {
+    display: grid;
+    grid-template-columns:repeat(2,1fr);
+    gap: 10px  ;
+    text-align: center;
+}
+.place p {
+    margin: 3% 0;
+}
+.place .place-item-title {
+    font-weight: 700;
+    font-size: 1.2em;
+}
+.place .place-item-subTitle {
+    padding: 10px 0;
+}
+.place .place-item-text {
+    font-size: 0.8em;
+}
+
+/* 후기 */
+.review-title {
+    margin: 7%;
+    font-size: 1.3em;
+    font-weight: 900;
+}
+.review-box {
+    height: 140px;
+    border: #353535 1px solid;
+}
