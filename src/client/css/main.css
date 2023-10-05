@@ -1,0 +1,97 @@
+html, footer{
+  margin: 0 auto;
+}
+
+.mainTitle {
+  margin: 5%;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+/* 모달 팝업 창 */
+#popup {
+  display: none; /*숨기기*/
+  position: fixed;
+}
+#popmenu {
+  position: absolute;
+  bottom: 50%;
+  width: 350px;
+  height: 233px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #353535;
+  background: #FFF;
+}
+#popmenu .exit {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#popmenu .popupIcon{
+  padding: 20px 0;
+}
+
+/* <!-- 버튼 2개 --> */
+.button-wrapper {
+  display: flex;
+  padding: 5%;
+}
+.button-wrapper button {
+  width: 170px;
+  height: 70px;
+  border: none;
+  font-size: 17px;
+}
+.button-wrapper .tutorial {
+  border-radius: 3px;
+  background: #efe3eb;
+}
+.button-wrapper .myStamp {
+  border-radius: 3px;
+  background: #d3d3d3;
+}
+
+/* 인기 장소 */
+.place-wrapper{
+  width: 90%;
+  margin: 0 auto;
+}
+.place-title {
+  margin: 7%;
+  font-size: 20px;
+  font-weight: 800;
+}
+.place {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  text-align: center;
+}
+.place p {
+  margin: 10px 0;
+}
+.place .place-item-title {
+  font-weight: 500;
+  font-size: 15px;
+}
+.place .place-item-subTitle {
+  font-size: 13px;
+}
+.place .place-item-text {
+  font-size: 11px;
+}
+
+/* 후기 */
+.review-wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+.review-title {
+  margin: 7%;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+
