@@ -5,7 +5,10 @@
   <img class="splash_logo" src="../file/splash_logo.png" alt="" />
 </div>
 
+
 <div class="container">
+
+  <!-- mainTitle -->
   <section class="mainTitle">
     <p>[대발자국]과 함께하는</p>
     <p>대구 스탬프 투어!</p>
@@ -63,25 +66,48 @@
 
   <!-- 버튼 2개 -->
   <section class="button-wrapper">
-    <!-- 모달 팝업창 -->
-    <div id="popup">
-      <div id="popmenu">
-        <div class="exit">
+    <!-- 튜토리얼 모달창  -->
+    <div id="tutorial-popup">
+      <div id="tutorial-popmenu">
+        <div class="tutorial-exit">
           <img src="../file/mainimg/modal-exit.png" alt="exitIcon" />
         </div>
         <img
-          class="popupIcon"
+          class="tutorial-popupIcon"
+          src="../file/mainimg/modal-tutorial.png"
+          alt="tutorialIcon"
+        />
+        <button class="tutorial-popup-btn" onclick="location.href='tutorialCourse'">
+          코스를 어떻게 설정하나요?
+        </button>
+        <button class="tutorial-popup-btn" onclick="location.href='tutorialQr'">
+          QR 인증하는 방법이 무엇인가요?
+        </button>
+        <button class="tutorial-popup-btn" onclick="location.href='tutorialStamp'">
+          미션 스탬프와 자동인증 스탬프는 뭐가 다른건가요?
+        </button>
+      </div>
+    </div>
+    <button class="tutorial tutorial-button">
+      [대발바닥] <br />
+      200% 사용법
+    </button>
+
+    <!-- 로그인 모달 팝업창 -->
+    <div id="login-popup">
+      <div id="login-popmenu">
+        <div class="login-exit">
+          <img src="../file/mainimg/modal-exit.png" alt="exitIcon" />
+        </div>
+        <img
+          class="login-popupIcon"
           src="../file/mainimg/model.png"
           alt="loginPopupIcon"
         />
         <p>로그인 후 사용 가능한 기능입니다.</p>
       </div>
     </div>
-    <button class="tutorial">
-      [대발바닥] <br />
-      200% 사용법
-    </button>
-    <button class="myStamp popup-contents">
+    <button class="myStamp login-button">
       나의 <br />
       스탬프 확인하기
     </button>
@@ -212,15 +238,28 @@
   });
 </script>
 
-<!-- 모달창 -->
+<!-- 튜토리얼 모달창 -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
   $(document).ready(function () {
-    $(".popup-contents").click(function () {
-      $("#popup").fadeIn();
+    $(".tutorial-button").click(function () {
+      $("#tutorial-popup").fadeIn();
     });
-    $(".exit").click(function () {
-      $("#popup").fadeOut();
+    $(".tutorial-exit").click(function () {
+      $("#tutorial-popup").fadeOut();
+    });
+  });
+</script>
+
+
+<!-- 로그인 모달창 -->
+<script>
+  $(document).ready(function () {
+    $(".login-button").click(function () {
+      $("#login-popup").fadeIn();
+    });
+    $(".login-exit").click(function () {
+      $("#login-popup").fadeOut();
     });
   });
 </script>

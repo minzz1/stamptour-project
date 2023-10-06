@@ -31,3 +31,14 @@ export const homeViewController = (request, response) => {
     response.render("detail")
   }
   
+  export const tutorialCourseViewController = (request, response) => {
+    response.render("tutorialCourse")
+  }
+
+  export const tutorialQrViewController = (request, response) => {
+    response.render("tutorialQr")
+  }
+
+  export const tutorialStampViewController = (request, response) => {
+    response.render("tutorialStamp")
+  }
