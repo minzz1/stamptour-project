@@ -17,9 +17,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     splash.style.display = "block";
     // 스플래시 화면을 보여준 후 "splashShown" 키를 세션 스토리지에 저장합니다.
+  // 스크롤을 비활성화합니다.
+  document.body.style.overflow = "hidden";
 
-     // 스크롤을 비활성화합니다.
-     document.body.style.overflow = "hidden";
 
     setTimeout(function () {
       showHeadersAndFooters(); // 헤더와 푸터를 보이는 함수 호출
@@ -34,9 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function hideSplashScreen() {
-    //스플래시 화면 숨기기
     splash.style.display = "none";
-
+    
     // 스크롤을 활성화
     document.body.style.overflow = "auto";
   }

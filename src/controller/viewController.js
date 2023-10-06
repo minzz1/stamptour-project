@@ -1,10 +1,12 @@
+const data = require('../client/data/info.json');
+
 // viewController.js
 export const homeViewController = (request, response) => {
     response.render("home");
   };
   
   export const introduceViewController = (request, response) => {
-    response.render("introduce");
+    response.render("introduce", { data });
   };
   
   export const courseViewController = (request, response) => {
