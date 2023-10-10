@@ -1,23 +1,29 @@
-import db from "../config/db";
+import Exception from "../handler/Exception.js";
+import ResponseBody from "../handler/ResponseBody.js";
+import { getCourseListWitUser, updateCourseVisitedStatus } from "../service/courseService.js";
 
- //데이터베이스 정보가져오기
-export const getCourseList = async (request, response)=> {
-    //로그인했는지 여부를 판단한다 그래서 유저 id를 가져온다 로그인 안했으면 null
-    const userId = request.user ? request.user.user_id : null ;
 
-    //데이터 베이스에서 코스 정보와 방문여부를 가져온다. 
-    const QUERY = `
-    SELECT c.*, uc.users_course_id FROM course c LEFT JOIN users_course uc 
-    ON c.course_id = uc.course_id AND uc.user_id = ?`
+export const qrCheck = async (req, res) => {
+  const user = req.user;
+  const qrDto = req.body;
+  try {
+    await updateCourseVisitedStatus({ user, ...qrDto });
+    return res.status(200).json(new ResponseBody(200, "success", "방문 완료", ""));
+  } catch (e) {
+    console.error(e);
+    if (e.statusCode) return res.status(e.statusCode).json({ statusCode: e.statusCode, statusText : e.statusText, message: e.message, data : e.data = "" });
+    else return res.status(Exception.INTERNAL_SERVER_ERROR.statusCode).json(Exception.INTERNAL_SERVER_ERROR);
+  }
+};
 
-    const courseList=await db.execute(QUERY, [1]).then((result) => result[0]);
-
-    response.json(courseList);
+export const getCourseList = async (req, res) => {
+  try {
+    const user = req.user;
+    const courseListDto = await getCourseListWitUser(user);
+    return res.status(200).json(new ResponseBody(200, "success", "코스 리스트 전송 완료", courseListDto));
+  } catch (e) {
+    console.error(e);
+    if (e.statusCode) return res.status(e.statusCode).json({ statusCode: e.statusCode, statusText : e.statusText, message: e.message, data : e.data = "" });
+    else return res.status(500).json(Exception.INTERNAL_SERVER_ERROR);
+  }
 }
-
-//     const QUERY = "SELECT * FROM users";
-//     const a = await db.execute(QUERY).then((result) => result[0]);
-//     console.log(a);
-//    return response.send(a);
-
-// controller -> service(중요한 처리들 )-> repository
